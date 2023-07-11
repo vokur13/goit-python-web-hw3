@@ -1,12 +1,7 @@
 import logging
-import os
 from pathlib import Path
 
 from timer import timer
-
-logging.basicConfig(level=logging.DEBUG, format='%(threadName)s %(message)s')
-
-cpuCount = os.cpu_count() * 2 + 1
 
 p = Path('bin')
 
@@ -39,4 +34,5 @@ def clean(path):
 
 
 if __name__ == '__main__':
-    parse(p)
+    logging.basicConfig(level=logging.DEBUG, format='%(threadName)s %(message)s')
+    parse(p) # delta=0.04296233301283792
