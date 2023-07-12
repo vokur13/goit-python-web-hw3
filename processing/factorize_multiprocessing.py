@@ -15,11 +15,11 @@ def factorize(*args):
 
 if __name__ == '__main__':
     t1 = default_timer()
-    with Pool(processes=cpu_count()) as pool:
+    with Pool(processes=4) as pool:
        result=pool.map(factorize, (128, 255, 99999, 10651060))
     a, b, c, d = result
     t2 = default_timer()
-    delta = t2 - t1  # delta=0.5267880000174046
+    delta = t2 - t1  # delta=0.5077578749624081
     logging.info(f'RunTime: {delta=}')
 
     assert a == [1, 2, 4, 8, 16, 32, 64, 128]
